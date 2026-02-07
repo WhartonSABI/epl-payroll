@@ -1,0 +1,241 @@
+season,team,points
+2013-2014,Manchester City,86
+2013-2014,Liverpool,84
+2013-2014,Chelsea,82
+2013-2014,Arsenal,79
+2013-2014,Everton,72
+2013-2014,Tottenham Hotspur,69
+2013-2014,Manchester United,64
+2013-2014,Southampton,56
+2013-2014,Stoke City,50
+2013-2014,Newcastle United,49
+2013-2014,Crystal Palace,45
+2013-2014,Swansea City,42
+2013-2014,West Ham United,40
+2013-2014,Sunderland,38
+2013-2014,Aston Villa,38
+2013-2014,Hull City,37
+2013-2014,West Bromwich Albion,36
+2013-2014,Norwich City,33
+2013-2014,Fulham,32
+2013-2014,Cardiff City,30
+2014-2015,Chelsea,87
+2014-2015,Manchester City,79
+2014-2015,Arsenal,75
+2014-2015,Manchester United,70
+2014-2015,Tottenham Hotspur,64
+2014-2015,Liverpool,62
+2014-2015,Southampton,60
+2014-2015,Swansea City,56
+2014-2015,Stoke City,54
+2014-2015,Crystal Palace,48
+2014-2015,Everton,47
+2014-2015,West Ham United,47
+2014-2015,West Bromwich Albion,44
+2014-2015,Leicester City,41
+2014-2015,Newcastle United,39
+2014-2015,Sunderland,38
+2014-2015,Aston Villa,38
+2014-2015,Hull City,35
+2014-2015,Burnley,33
+2014-2015,Queens Park Rangers,30
+2015-2016,Leicester City,81
+2015-2016,Arsenal,71
+2015-2016,Tottenham Hotspur,70
+2015-2016,Manchester City,66
+2015-2016,Manchester United,66
+2015-2016,Southampton,63
+2015-2016,West Ham United,62
+2015-2016,Liverpool,60
+2015-2016,Stoke City,51
+2015-2016,Chelsea,50
+2015-2016,Everton,47
+2015-2016,Swansea City,47
+2015-2016,Watford,45
+2015-2016,West Bromwich Albion,43
+2015-2016,Crystal Palace,42
+2015-2016,AFC Bournemouth,42
+2015-2016,Sunderland,39
+2015-2016,Newcastle United,37
+2015-2016,Norwich City,34
+2015-2016,Aston Villa,17
+2016-2017,Chelsea,93
+2016-2017,Tottenham Hotspur,86
+2016-2017,Manchester City,78
+2016-2017,Liverpool,76
+2016-2017,Arsenal,75
+2016-2017,Manchester United,69
+2016-2017,Everton,61
+2016-2017,Southampton,46
+2016-2017,AFC Bournemouth,46
+2016-2017,West Bromwich Albion,45
+2016-2017,West Ham United,45
+2016-2017,Leicester City,44
+2016-2017,Stoke City,44
+2016-2017,Crystal Palace,41
+2016-2017,Swansea City,41
+2016-2017,Burnley,40
+2016-2017,Watford,40
+2016-2017,Hull City,34
+2016-2017,Middlesbrough,28
+2016-2017,Sunderland,24
+2017-2018,Manchester City,100
+2017-2018,Manchester United,81
+2017-2018,Tottenham Hotspur,77
+2017-2018,Liverpool,75
+2017-2018,Chelsea,70
+2017-2018,Arsenal,63
+2017-2018,Burnley,54
+2017-2018,Everton,49
+2017-2018,Leicester City,47
+2017-2018,Newcastle United,44
+2017-2018,Crystal Palace,44
+2017-2018,AFC Bournemouth,44
+2017-2018,West Ham United,42
+2017-2018,Watford,41
+2017-2018,Brighton & Hove Albion,40
+2017-2018,Huddersfield Town,37
+2017-2018,Southampton,36
+2017-2018,Swansea City,33
+2017-2018,Stoke City,33
+2017-2018,West Bromwich Albion,31
+2018-2019,Manchester City,98
+2018-2019,Liverpool,97
+2018-2019,Chelsea,72
+2018-2019,Tottenham Hotspur,71
+2018-2019,Arsenal,70
+2018-2019,Manchester United,66
+2018-2019,Wolverhampton Wanderers,57
+2018-2019,Everton,54
+2018-2019,Leicester City,52
+2018-2019,West Ham United,52
+2018-2019,Watford,50
+2018-2019,Crystal Palace,49
+2018-2019,Newcastle United,45
+2018-2019,AFC Bournemouth,45
+2018-2019,Burnley,40
+2018-2019,Southampton,39
+2018-2019,Brighton & Hove Albion,36
+2018-2019,Cardiff City,34
+2018-2019,Fulham,26
+2018-2019,Huddersfield Town,16
+2019-2020,Liverpool,99
+2019-2020,Manchester City,81
+2019-2020,Manchester United,66
+2019-2020,Chelsea,66
+2019-2020,Leicester City,62
+2019-2020,Tottenham Hotspur,59
+2019-2020,Wolverhampton Wanderers,59
+2019-2020,Arsenal,56
+2019-2020,Sheffield United,54
+2019-2020,Burnley,54
+2019-2020,Southampton,52
+2019-2020,Everton,49
+2019-2020,Newcastle United,44
+2019-2020,Crystal Palace,43
+2019-2020,Brighton & Hove Albion,41
+2019-2020,West Ham United,39
+2019-2020,Aston Villa,35
+2019-2020,AFC Bournemouth,34
+2019-2020,Watford,34
+2019-2020,Norwich City,21
+2020-2021,Manchester City,86
+2020-2021,Manchester United,74
+2020-2021,Liverpool,69
+2020-2021,Chelsea,67
+2020-2021,Leicester City,66
+2020-2021,West Ham United,65
+2020-2021,Tottenham Hotspur,62
+2020-2021,Arsenal,61
+2020-2021,Leeds United,59
+2020-2021,Everton,59
+2020-2021,Aston Villa,55
+2020-2021,Newcastle United,45
+2020-2021,Wolverhampton Wanderers,45
+2020-2021,Crystal Palace,44
+2020-2021,Southampton,43
+2020-2021,Brighton & Hove Albion,41
+2020-2021,Burnley,39
+2020-2021,Fulham,28
+2020-2021,West Bromwich Albion,26
+2020-2021,Sheffield United,23
+2021-2022,Manchester City,93
+2021-2022,Liverpool,92
+2021-2022,Chelsea,74
+2021-2022,Tottenham Hotspur,71
+2021-2022,Arsenal,69
+2021-2022,Manchester United,58
+2021-2022,West Ham United,56
+2021-2022,Leicester City,52
+2021-2022,Brighton & Hove Albion,51
+2021-2022,Wolverhampton Wanderers,51
+2021-2022,Newcastle United,49
+2021-2022,Crystal Palace,48
+2021-2022,Brentford,46
+2021-2022,Aston Villa,45
+2021-2022,Southampton,40
+2021-2022,Everton,39
+2021-2022,Leeds United,38
+2021-2022,Burnley,35
+2021-2022,Watford,23
+2021-2022,Norwich City,22
+2022-2023,Manchester City,89
+2022-2023,Arsenal,84
+2022-2023,Manchester United,75
+2022-2023,Newcastle United,71
+2022-2023,Liverpool,67
+2022-2023,Brighton & Hove Albion,62
+2022-2023,Aston Villa,61
+2022-2023,Tottenham Hotspur,60
+2022-2023,Brentford,59
+2022-2023,Fulham,52
+2022-2023,Crystal Palace,45
+2022-2023,Chelsea,44
+2022-2023,Wolverhampton Wanderers,41
+2022-2023,West Ham United,40
+2022-2023,AFC Bournemouth,39
+2022-2023,Nottingham Forest,38
+2022-2023,Everton,36
+2022-2023,Leicester City,34
+2022-2023,Leeds United,31
+2022-2023,Southampton,25
+2023-2024,Manchester City,91
+2023-2024,Arsenal,89
+2023-2024,Liverpool,82
+2023-2024,Aston Villa,68
+2023-2024,Tottenham Hotspur,66
+2023-2024,Chelsea,63
+2023-2024,Newcastle United,60
+2023-2024,Manchester United,60
+2023-2024,West Ham United,52
+2023-2024,Crystal Palace,49
+2023-2024,Brighton & Hove Albion,48
+2023-2024,AFC Bournemouth,48
+2023-2024,Fulham,47
+2023-2024,Wolverhampton Wanderers,46
+2023-2024,Everton,40
+2023-2024,Brentford,39
+2023-2024,Nottingham Forest,32
+2023-2024,Luton Town,26
+2023-2024,Burnley,24
+2023-2024,Sheffield United,16
+2024-2025,Liverpool,84
+2024-2025,Arsenal,74
+2024-2025,Manchester City,71
+2024-2025,Chelsea,69
+2024-2025,Newcastle United,66
+2024-2025,Aston Villa,66
+2024-2025,Nottingham Forest,65
+2024-2025,Brighton & Hove Albion,61
+2024-2025,AFC Bournemouth,56
+2024-2025,Brentford,56
+2024-2025,Fulham,54
+2024-2025,Crystal Palace,53
+2024-2025,Everton,48
+2024-2025,West Ham United,43
+2024-2025,Manchester United,42
+2024-2025,Wolverhampton Wanderers,42
+2024-2025,Tottenham Hotspur,38
+2024-2025,Leicester City,25
+2024-2025,Ipswich Town,22
+2024-2025,Southampton,12
