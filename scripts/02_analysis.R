@@ -1,4 +1,16 @@
+install.packages("tidyverse")
 library(tidyverse)
+library(broom)
+
+# read raw data
+
+complete <- read_csv("complete_14-25.csv", show_col_types = FALSE)
+
+# median dataframe (unused)
+season_medians <- complete |>
+  group_by(season) |>
+  summarize(median_wage = median(annual_wages_gbp, na.rm = TRUE))
+
 
 # converting to relative payroll
 complete_final <- complete |>
@@ -42,3 +54,7 @@ ggplot(data = complete_final, mapping = aes(
 regression_4 <- lm(relative_annual_wages ~ points + team, data = complete_final)
 
 
+outputs_1 <- tidy(regression_1)
+outputs_2 <- tidy(regression_2)
+outputs_3 <- tidy(regression_3)
+outputs_4 <- tidy(regression_4)
