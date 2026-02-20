@@ -12,7 +12,12 @@ complete_final <- complete |>
   ungroup() |>
   mutate(big_6 = if_else(team %in% big_6, "Big 6", "Other"))
 
+x_max_other <- complete_final |> filter(big_6 == "Other") |> pull(relative_annual_wages) |> max(na.rm = TRUE)
+x_min_big6 <- complete_final |> filter(big_6 == "Big 6") |> pull(relative_annual_wages) |> min(na.rm = TRUE)
+
 p <- ggplot(complete_final, aes(x = relative_annual_wages, y = points, color = big_6)) +
+  geom_vline(xintercept = x_min_big6, linetype = "dashed") +
+  geom_vline(xintercept = x_max_other, linetype = "dashed") +
   geom_point() +
   labs(
     x = "Relative annual payroll (vs season median)",
