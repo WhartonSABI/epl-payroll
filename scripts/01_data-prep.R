@@ -1,15 +1,31 @@
-# install.packages("tidyverse")
-library(tidyverse)
+required_packages <- c("dplyr")
+missing_packages <- required_packages[!vapply(required_packages, requireNamespace, logical(1), quietly = TRUE)]
 
-# read raw data
-wages <- read_csv("data/raw/wages_14-25.csv", show_col_types = FALSE)
-points <- read_csv("data/raw/points_14-25.csv", show_col_types = FALSE)
+if (length(missing_packages) > 0) {
+  stop(
+    "Missing required R packages: ",
+    paste(missing_packages, collapse = ", "),
+    ". Install them before running the pipeline.",
+    call. = FALSE
+  )
+}
 
-# merge wages + points on (season, team)
+library(dplyr)
+
+wages <- read.csv("data/raw/wages_14-25.csv", stringsAsFactors = FALSE)
+points <- read.csv("data/raw/points_14-25.csv", stringsAsFactors = FALSE)
+
 complete <- points |>
   inner_join(wages, by = c("season", "team")) |>
-  select(-rank, -n_players, -weekly_wages_gbp, -pct_estimated)
+  select(season, team, points, annual_wages_gbp)
 
-# write output
-write_csv(complete, "data/processed/complete_14-25.csv")
-message("Wrote: data/processed/complete_14-25.csv (", nrow(complete), " rows)")
+dir.create("data/processed", showWarnings = FALSE, recursive = TRUE)
+write.table(
+  complete,
+  "data/processed/complete_14-25.csv",
+  sep = ",",
+  quote = FALSE,
+  row.names = FALSE
+)
+
+message("Wrote data/processed/complete_14-25.csv (", nrow(complete), " rows)")

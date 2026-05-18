@@ -8,6 +8,9 @@
 # jp's sandbox
 jp/
 
+# local Python environment
+.venv/
+
 #########
 ### R ###
 #########

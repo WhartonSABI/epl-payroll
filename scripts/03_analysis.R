@@ -1,60 +1,115 @@
-install.packages("tidyverse")
-library(tidyverse)
-library(broom)
+source("scripts/00_common.R")
 
-# read raw data
-
-complete <- read_csv("data/processed/complete_14-25.csv", show_col_types = FALSE)
-
-# median dataframe (unused)
-season_medians <- complete |>
-  group_by(season) |>
-  summarize(median_wage = median(annual_wages_gbp, na.rm = TRUE))
-
-
-# converting to relative payroll
-complete_final <- complete |>
-  group_by(season) |>
-  mutate(
-    relative_annual_wages = annual_wages_gbp / median(annual_wages_gbp, na.rm = TRUE)
-  ) |>
-  ungroup()
-
-# regression 1: E[points] vs relative wages
-regression_1 <- lm(points ~ relative_annual_wages, data = complete_final)
-
-ggplot(data = complete_final, mapping = aes(x= relative_annual_wages, y = points)) +
-  geom_point() +
-  geom_smooth(method = "lm") +
-  labs(
-    title = "Points vs Relative Annual Wages in the Premier League, 2014-2025"
+coef_row <- function(model, term, model_name, coefficient_name, interpretation) {
+  coef_table <- summary(model)$coefficients
+  data.frame(
+    model = model_name,
+    coefficient = coefficient_name,
+    term = term,
+    estimate = unname(coef_table[term, "Estimate"]),
+    std_error = unname(coef_table[term, "Std. Error"]),
+    p_value = unname(coef_table[term, "Pr(>|t|)"]),
+    interpretation = interpretation,
+    stringsAsFactors = FALSE
   )
-  
-  
-# regression 2: E[Points] vs wages, team as factor
-regression_2 <- lm(points ~ relative_annual_wages + team, data = complete_final)
+}
 
-ggplot(data = complete_final, mapping = aes(x = relative_annual_wages, 
-                                             y = points, color = team)) +
-  geom_point() +
-  geom_smooth(method = "lm", se = FALSE) +
-  coord_cartesian(xlim = c(0, 4), ylim = c(0,100))
+fit_row <- function(model, model_name) {
+  model_summary <- summary(model)
+  data.frame(
+    model = model_name,
+    adjusted_r_squared = unname(model_summary$adj.r.squared),
+    residual_standard_error = unname(model_summary$sigma),
+    n = length(model$residuals),
+    stringsAsFactors = FALSE
+  )
+}
 
-# regression 3: simple E[wages] vs points
-regression_3 <- lm(relative_annual_wages ~ points, data = complete_final)
+complete <- read_complete_data()
+complete_final <- add_payroll_features(complete)
+models <- fit_article_models(complete_final)
 
-ggplot(data = complete_final, mapping = aes(
-  x = points, y = relative_annual_wages
-  )) +
-  geom_point() + 
-  geom_smooth(method = "lm", se = FALSE)
+pooled <- coef_row(
+  models$pooled,
+  "relative_annual_wages",
+  "Pooled linear",
+  "Relative wage bill",
+  "Strong league-wide association"
+)
 
+club_fe <- coef_row(
+  models$club_fe,
+  "relative_annual_wages",
+  "Club fixed effects",
+  "Relative wage bill",
+  "Weak average within-club association"
+)
 
-# regression 4: E[wages] vs points, team as factor
-regression_4 <- lm(relative_annual_wages ~ points + team, data = complete_final)
+interaction_other <- coef_row(
+  models$interaction,
+  "relative_annual_wages",
+  "Interaction model",
+  "Non-Big-Six wage slope",
+  "Strong positive non-Big-Six association"
+)
 
+interaction_delta <- coef_row(
+  models$interaction,
+  "relative_annual_wages:big_six",
+  "Interaction model",
+  "Big Six interaction",
+  "Big Six slope is much flatter"
+)
 
-outputs_1 <- tidy(regression_1)
-outputs_2 <- tidy(regression_2)
-outputs_3 <- tidy(regression_3)
-outputs_4 <- tidy(regression_4)
+interaction_big_six <- coef_row(
+  models$interaction_big_six_base,
+  "relative_annual_wages",
+  "Interaction model",
+  "Implied Big Six wage slope",
+  "No clear Big Six wage return"
+)
+
+log_fe <- coef_row(
+  models$log_fe,
+  "log(relative_annual_wages)",
+  "Log fixed effects",
+  "Log relative wage bill",
+  "Alternative diminishing-returns specification"
+)
+
+model_estimates <- bind_rows(
+  pooled,
+  club_fe,
+  interaction_other,
+  interaction_delta,
+  interaction_big_six,
+  log_fe
+)
+
+model_fit <- bind_rows(
+  fit_row(models$pooled, "Pooled linear"),
+  fit_row(models$club_fe, "Club fixed effects"),
+  fit_row(models$interaction, "Interaction model"),
+  fit_row(models$log_fe, "Log fixed effects")
+)
+
+dir.create("outputs", showWarnings = FALSE)
+write.table(
+  model_estimates,
+  "outputs/model_estimates.csv",
+  sep = ",",
+  quote = FALSE,
+  row.names = FALSE
+)
+write.table(
+  model_fit,
+  "outputs/model_fit.csv",
+  sep = ",",
+  quote = FALSE,
+  row.names = FALSE
+)
+
+print(model_estimates)
+print(model_fit)
+
+message("Wrote outputs/model_estimates.csv and outputs/model_fit.csv")

@@ -1,0 +1,7 @@
+model,coefficient,term,estimate,std_error,p_value,interpretation
+Pooled linear,Relative wage bill,relative_annual_wages,18.197388365869,1.22316976635622,7.75116025592538e-36,Strong league-wide association
+Club fixed effects,Relative wage bill,relative_annual_wages,3.68525141172992,3.40268472556366,0.280068107942895,Weak average within-club association
+Interaction model,Non-Big-Six wage slope,relative_annual_wages,22.723946218883,5.71909528482888,9.84347720634802e-05,Strong positive non-Big-Six association
+Interaction model,Big Six interaction,relative_annual_wages:big_six,-28.372298630487,6.98161679043581,6.89771003058661e-05,Big Six slope is much flatter
+Interaction model,Implied Big Six wage slope,relative_annual_wages,-5.64835241160389,4.00436288709492,0.159907977332885,No clear Big Six wage return
+Log fixed effects,Log relative wage bill,log(relative_annual_wages),8.4118547449249,4.27309378312286,0.0503576535750771,Alternative diminishing-returns specification
