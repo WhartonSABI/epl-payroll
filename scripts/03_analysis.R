@@ -96,14 +96,14 @@ model_fit <- bind_rows(
 dir.create("outputs", showWarnings = FALSE)
 write.table(
   model_estimates,
-  "outputs/model_estimates.csv",
+  "outputs/model_estimates.csv.gz",
   sep = ",",
   quote = FALSE,
   row.names = FALSE
 )
 write.table(
   model_fit,
-  "outputs/model_fit.csv",
+  "outputs/model_fit.csv.gz",
   sep = ",",
   quote = FALSE,
   row.names = FALSE
@@ -112,4 +112,4 @@ write.table(
 print(model_estimates)
 print(model_fit)
 
-message("Wrote outputs/model_estimates.csv and outputs/model_fit.csv")
+message("Wrote outputs/model_estimates.csv.gz and outputs/model_fit.csv.gz")

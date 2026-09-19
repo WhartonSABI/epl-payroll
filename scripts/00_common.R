@@ -21,7 +21,7 @@ big_six_teams <- c(
   "Tottenham Hotspur"
 )
 
-read_complete_data <- function(path = "data/processed/complete_14-25.csv") {
+read_complete_data <- function(path = "data/processed/complete_14-25.csv.gz") {
   read.csv(path, stringsAsFactors = FALSE)
 }
 

@@ -43,8 +43,8 @@ latexmk -pdf -interaction=nonstopmode main.tex
 
 ## Key Outputs
 
-- `outputs/model_estimates.csv`: coefficient estimates used in the article.
-- `outputs/model_fit.csv`: adjusted R-squared, residual standard error, and sample size by model.
+- `outputs/model_estimates.csv.gz`: coefficient estimates used in the article.
+- `outputs/model_fit.csv.gz`: adjusted R-squared, residual standard error, and sample size by model.
 - `article/01_overall_relationship.png`: pooled payroll-points relationship.
 - `article/02_team_effects.png`: within-club demeaned relationship.
 - `article/03_big_six_interaction.png`: Big Six vs non-Big-Six interaction slopes.

@@ -12,8 +12,8 @@ if (length(missing_packages) > 0) {
 
 library(dplyr)
 
-wages <- read.csv("data/raw/wages_14-25.csv", stringsAsFactors = FALSE)
-points <- read.csv("data/raw/points_14-25.csv", stringsAsFactors = FALSE)
+wages <- read.csv("data/raw/wages_14-25.csv.gz", stringsAsFactors = FALSE)
+points <- read.csv("data/raw/points_14-25.csv.gz", stringsAsFactors = FALSE)
 
 complete <- points |>
   inner_join(wages, by = c("season", "team")) |>
@@ -22,10 +22,10 @@ complete <- points |>
 dir.create("data/processed", showWarnings = FALSE, recursive = TRUE)
 write.table(
   complete,
-  "data/processed/complete_14-25.csv",
+  "data/processed/complete_14-25.csv.gz",
   sep = ",",
   quote = FALSE,
   row.names = FALSE
 )
 
-message("Wrote data/processed/complete_14-25.csv (", nrow(complete), " rows)")
+message("Wrote data/processed/complete_14-25.csv.gz (", nrow(complete), " rows)")
